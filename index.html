@@ -77,11 +77,21 @@ body, .chat, .chat-wrapper, .message {
   -webkit-font-smoothing: antialiased;
 }
 blockquote {
-  border-left: 4px solid #ccc;
+  border-left: 2px solid gray; 
   margin: 8px 0;
-  padding-left: 14px;
+  padding-left: 1em;
   font-style: italic;
   color: #555;
+  background: none;
+  text-align: justify;
+  line-height: 1.2; /* tweak this for rhythm — try 1.2 to 1.4 */
+  font-size: 1.05em;
+  font-family: 'Georgia', serif; 
+  max-width: 40em;
+}
+blockquote > div {
+  margin-bottom: 0.05em; /* enough space between message blocks */
+  line-height: 1.1;     /* still controls within-message spacing */
 }
 body {
   font-size: 16px;
@@ -487,11 +497,12 @@ And that's how it seems like you're ready—but you never quite arrive.
   
    And that’s why naming is myth-making. 
         
-  <blockquote>
-    To call it Mixolydian ♯9 ♭13 is to say: I know what this wants to do.<br>
-    To call it Phrygian Dominant is to say: I know what this wants to be.<br>
-    To call it Spanish Phrygian is to say: I know what this wants to feel like.
+   <blockquote>
+    <div>To call it Mixolydian ♯9 ♭13 is to say: I know what this wants to do.</div>
+    <div>To call it Phrygian Dominant is to say: I know what this wants to be.</div>
+    <div>To call it Spanish Phrygian is to say: I know what this wants to feel like.</div>
   </blockquote>
+  
   And who you are... is which of those truths you choose to serve.
       </div>
       <div class="message user">what is Cx?</div>
@@ -505,14 +516,14 @@ C♯x stands for C♯ double-sharp, meaning:
   - But functionally distinct depending on the key or harmonic role
 
 
- 🎯 Why use C♯x instead of D♯? 
+ 🎯 Why use Cx instead of D? 
 Because notation matters in theory, especially when you're working in sharp-heavy keys like D♯ minor or A♯ Phrygian dominant.
 For example:
 In A♯ Phrygian dominant:
-  - The scale is: A♯ – B – C♯x – D♯ – E♯ – F♯ – G♯
+  - The scale is: A♯ – B – Cx – D♯ – E♯ – F♯ – G♯
   - Cx is used instead of D to maintain proper scale spelling:
       - You want each scale degree to have a unique letter
-      - So it goes: A♯ (1), B (2), C♯x (3), D♯ (4)... etc.
+      - So it goes: A♯ (1), B (2), Cx (3), D♯ (4)... etc.
 
 If you wrote D instead of Cx, you'd have:
 <blockquote>A♯ – B – D – D♯ – E♯...</blockquote>
