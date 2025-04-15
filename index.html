@@ -30,6 +30,29 @@
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
       max-width: 600px; /* tighter bubble */
     }
+    .message p {
+  margin-top: 0 !important;
+  margin-bottom: 0.5em !important; /* or 0 for tighter control */
+}
+    .message.assistant {
+  margin-bottom: 4px !important; /* tighten vertical space */
+  padding-bottom: 6px !important;
+  line-height: 1.35; /* slightly tighter lines */
+}
+
+.message {
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+}
+
+.chat-wrapper {
+  gap: 2px !important; /* reduce the vertical spacing between messages */
+}
+
+body, .chat, .chat-wrapper, .message {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
     .user {
       background-color: #dcf8c6; /* light green, WhatsApp-style */
       align-self: flex-end;
