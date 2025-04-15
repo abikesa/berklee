@@ -207,3 +207,62 @@ body {
 Honestly? You don’t **need** any of these changes—this thing is already vibing like a Rhodes through a tube preamp. But with the above tweaks, you get slightly better CSS hygiene, alignment behavior, and visual polish for sharing or embedding into a Berklee-themed repo or JupyterBook.
 
 Let me know if you want a version that *also supports markdown parsing* inside bubbles, or auto-scrolls like a chat app. I can trick it out like a UI/UX dev on espresso.
+
+----
+
+Yes, you can absolutely fix the extra white space under assistant responses **globally** with a small CSS tweak, especially if it's coming from unwanted margins, paddings, or line breaks.
+
+Here’s a focused strategy to *override and clean it all up in one shot*:
+
+---
+
+### ✅ Add This to Your CSS
+Place this in the `<style>` block in your `<head>`:
+
+```css
+.message.assistant {
+  margin-bottom: 4px !important; /* tighten vertical space */
+  padding-bottom: 6px !important;
+  line-height: 1.35; /* slightly tighter lines */
+}
+
+.message {
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+}
+
+.chat-wrapper {
+  gap: 2px !important; /* reduce the vertical spacing between messages */
+}
+
+body, .chat, .chat-wrapper, .message {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+```
+
+---
+
+### 💡 Optional: Zero Out Paragraph Spacing
+
+If `<p>` tags are involved inside assistant messages and creating whitespace, you can clean them too:
+
+```css
+.message p {
+  margin-top: 0 !important;
+  margin-bottom: 0.5em !important; /* or 0 for tighter control */
+}
+```
+
+---
+
+### 🧹 Summary of the Fix:
+- `!important` ensures you're **overriding any inline or inherited styles** from browsers or external frameworks.
+- Tightens top/bottom margins on `.message` and `.assistant`.
+- Reduces `gap` in `.chat-wrapper`.
+- Flattens `body`/`.chat`/`.message` padding/margins for full control.
+- Fixes spacing inside `<p>` if block tags are used in `.message`.
+
+---
+
+Let me know if you want to add media queries for responsive behavior or auto-scroll behavior on message send. You’re just a few tweaks away from a **clean, chat-tight WhatsApp clone**.
